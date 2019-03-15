@@ -1,0 +1,74 @@
+<!--definicja dokumentu, okresla wersje html, zakres uzywanych tagow, itd -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+    <!-- meta tagi, wykorzystywane np. przez wyszukiwarki, sluza rowniez do definicji zawartosci, formatowania jezyka, itp-->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="pl" />
+    <meta name="author" content="Michał Rzepka"/>
+    <meta name="robots" content="noindex,follow"/>
+    <title>Some title</title>
+    <meta name="description" content="Moja strona"/>
+    <!--boty wyszukiwarek raczej juz tego nie uwzgledniaja-->
+    <meta name="keywords" content="moja stronka xd"/>
+</head>
+<body>
+
+    <!-- TABELE -->
+
+    <!-- cellpadding - wypelnienie komorki -->
+    <!-- cellspacing - odstep miedzy komorkami -->
+    <!-- tfood, thead, tbody - opcjonalne -->
+    <table border="1" cellpadding="10" cellspacing="0" height="300">
+        <caption>Naglowek glowny</caption><!--znacznik semantyczny -->
+
+        <thead bgcolor="gray">
+            <tr><!-- Table Row -->
+                <th>naglowek 1</th><!-- Table Header - naglowek tabeli-->
+                <th VALIGN="bottom">naglowek 2</th>
+                <th>naglowek 3</th>
+            </tr>
+        </thead>
+        <tfoot bgcolor="red">
+            <tr>
+                <!-- colspan - rozpiecie na pozostale kolumny-->
+                <td colspan="3">&nbsp;</td>
+
+            </tr>
+        </tfoot>
+
+        <tbody align="right">
+            <tr>
+                <td VALIGN="top"> 1</td><!-- Table data - komorka-->
+                <td align="center"> 2</td>
+                <td align="right"> 3</td>
+            </tr>
+
+            <tr>
+                <td> Informacja 1</td><!-- Table data - komorka-->
+                <td> Informacja 2</td>
+                <td> Informacja 3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br/>
+
+    <!--male cwiczenie z colspan i rowspan -->
+
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <td colspan="2" align = "center">1</td>
+
+        </tr>
+        <tr>
+            <td>2</td>
+            <td rowspan="2">2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+    </table>
+
+</body>
+</html>
