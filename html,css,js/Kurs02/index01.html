@@ -1,0 +1,94 @@
+<!--definicja dokumentu, okresla wersje html, zakres uzywanych tagow, itd -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+    <!-- meta tagi, wykorzystywane np. przez wyszukiwarki, sluza rowniez do definicji zawartosci, formatowania jezyka, itp-->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="pl" />
+    <meta name="author" content="Michał Rzepka"/>
+    <meta name="robots" content="noindex,follow"/>
+    <title>Some title</title>
+    <meta name="description" content="Moja strona"/>
+    <!--boty wyszukiwarek raczej juz tego nie uwzgledniaja-->
+    <meta name="keywords" content="moja stronka xd"/>
+</head>
+<body>
+
+    <!-- paste code here -->
+
+    To jest jakis tekst po ktorym jest przerwanie <br/>To jest tekst po przerwaniu<br/>
+
+    <!-- to jest sposob przestarzaly, powinno sie uzywac css-->
+    <font size="15" color="#dc143c" face="Cambria">To jest inna czcionka</font> <br/>
+
+    <!-- PONIZEJ ZNAJDUJA SIE TAGI SEMANTYCZNE -->
+
+    <!-- fromaowanie + zwracają na nie uwagi wyszukiwarki - mozna w ten sposob przemycac np. slowka kluczowe -->
+    <strong>tekst jest pogrubiony, ale też niesie wartość sematyczną</strong><br/>
+    <em>to jest tekst pochylony, ale też nie sie wartość semantyczną</em><br/>
+
+    <!-- indeksy gorny i dolny -->
+    x<sup>2</sup><br/>
+    s<sub>1</sub><br/>
+
+    <!-- naglowek - sa to rowniez tagi sematyczne, znaczenie dla wyszukiwarek-->
+
+    <h1>DUZY TYTUL</h1>
+    <h2>podtytul1</h2>
+    <h3>podtytul2</h3>
+    <h4>podtytul3</h4>
+    <h5>podtytul4</h5>
+    <h6>podtytul5</h6>
+
+
+    <!-- przyklad zamieszczania kodu na stronie-->
+
+    <!-- pre zleca preformatowanie - interpretowanie spacji i enterow, nie trzeba caly czas uzywac <br/> -->
+    <pre>
+        <code> <!--opcjonalne -->
+        #include &lt;iostream> <!-- lt jako znak escape zeby nie zinterpretowalo jako tag-->
+        using namespace std;
+
+        int main(){
+            cout << &quot;Jakis tekst&quot; << endl;
+            system(&quot;pause&quot;);
+            return 0;
+        }
+        </code>
+    </pre>
+
+    <!-- wyroznianie zmiennych-->
+
+    <var> int x; int y</var><br/>
+
+    <!--cytowanie-->
+
+    <br/>
+    <cite>Lucius Anneus Seneca</cite>
+    <blockquote cite="google.com">Dlaczego Bóg wszystkich najlepszych nawiedza chorobą lub smutkiem, albo innymi utrapieniami? Dla tej samej przyczyny, dla której na wojnie najniebezpieczniejsze zadania powierza się najdzielniejszym żołnierzom.</blockquote>
+
+    <!--definiowanie-->
+
+    <dfn>some definition</dfn>
+
+    <pre>
+        <address>
+            Jan Kowalski
+            Lipowa 15
+            45-352 Wonchock
+        </address>
+    </pre>
+
+    <!-- akronim -->
+    <acronym title="World Wide Web Consortium" xml:lang="eng">W3C</acronym>
+    <br/>
+    <!-- skrot -->
+    <abbr title="profesor">prof.</abbr>
+
+
+
+
+
+
+</body>
+</html>
