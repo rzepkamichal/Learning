@@ -1,0 +1,37 @@
+<!--definicja dokumentu, okresla wersje html, zakres uzywanych tagow, itd -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"><head>
+    <!-- meta tagi, wykorzystywane np. przez wyszukiwarki, sluza rowniez do definicji zawartosci, formatowania jezyka, itp-->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="pl" />
+    <meta name="author" content="Michał Rzepka"/>
+    <meta name="robots" content="noindex,follow"/>
+    <title>Some title</title>
+    <meta name="description" content="Moja strona"/>
+    <!--boty wyszukiwarek raczej juz tego nie uwzgledniaja-->
+    <meta name="keywords" content="moja stronka xd"/>
+</head>
+
+
+    <!-- RAMKI - niezalecane do pozycjonowania-->
+    <!-- cwiczenie ma na celu pierwsze ogarniecie layoutu -->
+
+    <!-- tworzymy zbior ramek, wyklucza uzywanie <body>
+         trzeba bylo tez aktualizowac doctype
+         cols - columny
+         rows - wiersze
+         * - reszta
+         moga byc procenty jak i na sztywno piksele
+    -->
+    <frameset rows="20%,*">
+        <frame src="banner.html"/>
+        <frameset cols="30%, *" border="2">
+            <frame src="menu.html" noresize/>
+            <frame src="index05.html" name="glowna_tresc"/>
+
+            <noframes><body>Twoja przegladarka nie obsluguje ramek</body></noframes>
+        </frameset>
+    </frameset>
+
+
+</html>
