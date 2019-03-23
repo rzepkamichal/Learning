@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/musr/Desktop/dev/SortingAlgorithms/src/Sort.cpp" "/home/musr/Desktop/dev/SortingAlgorithms/CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o"
-  "/home/musr/Desktop/dev/SortingAlgorithms/src/main.cpp" "/home/musr/Desktop/dev/SortingAlgorithms/CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o"
+  "/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Sort.cpp" "/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o"
+  "/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Util.cpp" "/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o"
+  "/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/main.cpp" "/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

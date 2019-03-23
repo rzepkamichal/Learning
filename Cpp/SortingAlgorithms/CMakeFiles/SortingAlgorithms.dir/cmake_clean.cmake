@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o"
+  "CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o"
   "CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o"
   "SortingAlgorithms.pdb"
   "SortingAlgorithms"

@@ -1,9 +1,11 @@
 #include <iostream>
+#include "Util.h"
+
 class Sort{
 
 public:
     
     void write();
-    void quickSort(int*& tab, int len, int beginIndex);
+    void quickSort(double*& tab, int len);
     
 };

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/musr/Desktop/dev/SortingAlgorithms
+CMAKE_SOURCE_DIR = /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/musr/Desktop/dev/SortingAlgorithms
+CMAKE_BINARY_DIR = /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SortingAlgorithms.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/SortingAlgorithms.dir/flags.make
 
 CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o: CMakeFiles/SortingAlgorithms.dir/flags.make
 CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o: src/Sort.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/musr/Desktop/dev/SortingAlgorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o -c /home/musr/Desktop/dev/SortingAlgorithms/src/Sort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o -c /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Sort.cpp
 
 CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/musr/Desktop/dev/SortingAlgorithms/src/Sort.cpp > CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Sort.cpp > CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.i
 
 CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/musr/Desktop/dev/SortingAlgorithms/src/Sort.cpp -o CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Sort.cpp -o CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.s
 
 CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o.requires:
 
@@ -81,18 +81,42 @@ CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o.provides: CMakeFiles/SortingAlgo
 CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o.provides.build: CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o
 
 
+CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o: CMakeFiles/SortingAlgorithms.dir/flags.make
+CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o: src/Util.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o -c /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Util.cpp
+
+CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Util.cpp > CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.i
+
+CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Util.cpp -o CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.s
+
+CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o.requires:
+
+.PHONY : CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o.requires
+
+CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o.provides: CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SortingAlgorithms.dir/build.make CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o.provides.build
+.PHONY : CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o.provides
+
+CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o.provides.build: CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o
+
+
 CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o: CMakeFiles/SortingAlgorithms.dir/flags.make
 CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/musr/Desktop/dev/SortingAlgorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o -c /home/musr/Desktop/dev/SortingAlgorithms/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o -c /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/main.cpp
 
 CMakeFiles/SortingAlgorithms.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SortingAlgorithms.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/musr/Desktop/dev/SortingAlgorithms/src/main.cpp > CMakeFiles/SortingAlgorithms.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/main.cpp > CMakeFiles/SortingAlgorithms.dir/src/main.cpp.i
 
 CMakeFiles/SortingAlgorithms.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SortingAlgorithms.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/musr/Desktop/dev/SortingAlgorithms/src/main.cpp -o CMakeFiles/SortingAlgorithms.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/main.cpp -o CMakeFiles/SortingAlgorithms.dir/src/main.cpp.s
 
 CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o.requires:
 
@@ -108,16 +132,18 @@ CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o.provides.build: CMakeFiles/Sorti
 # Object files for target SortingAlgorithms
 SortingAlgorithms_OBJECTS = \
 "CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o" \
+"CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o" \
 "CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o"
 
 # External object files for target SortingAlgorithms
 SortingAlgorithms_EXTERNAL_OBJECTS =
 
 SortingAlgorithms: CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o
+SortingAlgorithms: CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o
 SortingAlgorithms: CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o
 SortingAlgorithms: CMakeFiles/SortingAlgorithms.dir/build.make
 SortingAlgorithms: CMakeFiles/SortingAlgorithms.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/musr/Desktop/dev/SortingAlgorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable SortingAlgorithms"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable SortingAlgorithms"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SortingAlgorithms.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -126,6 +152,7 @@ CMakeFiles/SortingAlgorithms.dir/build: SortingAlgorithms
 .PHONY : CMakeFiles/SortingAlgorithms.dir/build
 
 CMakeFiles/SortingAlgorithms.dir/requires: CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o.requires
+CMakeFiles/SortingAlgorithms.dir/requires: CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o.requires
 CMakeFiles/SortingAlgorithms.dir/requires: CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o.requires
 
 .PHONY : CMakeFiles/SortingAlgorithms.dir/requires
@@ -135,6 +162,6 @@ CMakeFiles/SortingAlgorithms.dir/clean:
 .PHONY : CMakeFiles/SortingAlgorithms.dir/clean
 
 CMakeFiles/SortingAlgorithms.dir/depend:
-	cd /home/musr/Desktop/dev/SortingAlgorithms && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/musr/Desktop/dev/SortingAlgorithms /home/musr/Desktop/dev/SortingAlgorithms /home/musr/Desktop/dev/SortingAlgorithms /home/musr/Desktop/dev/SortingAlgorithms /home/musr/Desktop/dev/SortingAlgorithms/CMakeFiles/SortingAlgorithms.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms /home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/CMakeFiles/SortingAlgorithms.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SortingAlgorithms.dir/depend
 

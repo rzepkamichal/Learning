@@ -3,12 +3,14 @@
 	<VirtualDirectory Name="src">
 		<VirtualDirectory Name="src">
 			<File Name="src/Sort.cpp"/>
+			<File Name="src/Util.cpp"/>
 			<File Name="src/main.cpp"/>
 		</VirtualDirectory>
 	</VirtualDirectory>
 	<VirtualDirectory Name="include">
 		<VirtualDirectory Name="src">
 			<File Name="src/Sort.h"/>
+			<File Name="src/Util.h"/>
 		</VirtualDirectory>
 	</VirtualDirectory>
 	<Settings Type="">

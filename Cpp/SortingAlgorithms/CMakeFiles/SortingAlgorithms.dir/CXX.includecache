@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Sort.cpp
+Sort.h
+/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Sort.h
+
+/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Sort.h
+iostream
+-
+Util.h
+/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Util.h
+
+/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Util.cpp
+Util.h
+/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Util.h
+
+/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Util.h
+stdlib.h
+-
+
+/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/main.cpp
+iostream
+-
+stdlib.h
+-
+time.h
+-
+Sort.h
+/home/musr/Desktop/dev/Learning/Cpp/SortingAlgorithms/src/Sort.h
+

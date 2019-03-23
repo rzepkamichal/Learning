@@ -1,1 +1,1 @@
-/usr/bin/c++   -Wall -Werror -std=c++14 -g   CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o  -o SortingAlgorithms 
+/usr/bin/c++   -Wall -Werror -std=c++14 -g   CMakeFiles/SortingAlgorithms.dir/src/Sort.cpp.o CMakeFiles/SortingAlgorithms.dir/src/Util.cpp.o CMakeFiles/SortingAlgorithms.dir/src/main.cpp.o  -o SortingAlgorithms 
