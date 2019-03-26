@@ -7,8 +7,11 @@
       <change afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgages/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/imgages/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgages/Thumbs.db" beforeDir="false" afterPath="$PROJECT_DIR$/images/Thumbs.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgages/fb.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/fb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgages/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index04.html" beforeDir="false" afterPath="$PROJECT_DIR$/index04.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index05.html" beforeDir="false" afterPath="$PROJECT_DIR$/index05.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/index04.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="81" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
+              <caret line="19" column="80" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -69,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index06.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+            <state relative-caret-position="68">
+              <caret line="4" column="71" lean-forward="true" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -79,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/banner.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -186,16 +189,15 @@
       <workItem from="1552634569860" duration="2718000" />
       <workItem from="1552637313392" duration="17000" />
       <workItem from="1552637389987" duration="1566000" />
-      <workItem from="1553239952226" duration="5088000" />
+      <workItem from="1553239952226" duration="5346000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9389000" />
+    <option name="totallyTimeSpent" value="9647000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1236" height="1040" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15108514" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -258,7 +260,7 @@
     <entry file="file://$PROJECT_DIR$/index04.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="81" selection-start-line="19" selection-start-column="81" selection-end-line="19" selection-end-column="81" />
+          <caret line="19" column="80" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -272,14 +274,14 @@
     <entry file="file://$PROJECT_DIR$/banner.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index06.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        <state relative-caret-position="68">
+          <caret line="4" column="71" lean-forward="true" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="71" />
         </state>
       </provider>
     </entry>

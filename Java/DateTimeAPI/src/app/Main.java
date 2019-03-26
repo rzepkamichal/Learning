@@ -1,9 +1,6 @@
 package app;
 
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
@@ -84,6 +81,34 @@ public class Main {
         LocalTime max = LocalTime.MAX;
         System.out.println(max);
 
+
+        /**LocalDateTime
+         * - combination of LocalDate and LocalTame
+         */
+
+        //some ways to obtain an instance
+
+        LocalDateTime dateTime = LocalDateTime.now();
+        LocalDateTime dateTime1 = LocalDateTime.of(2019, Month.AUGUST, 20, 04, 30);
+        LocalDateTime dateTime2 = LocalDateTime.parse("2019-03-21T08:29:00");
+
+        System.out.println(dateTime);
+        System.out.println(dateTime1);
+        System.out.println(dateTime2);
+
+        //plus and minus methods
+
+        LocalDateTime dateTime3 = dateTime.plusDays(21);
+        LocalDateTime dateTime4 = dateTime1.minusHours(5);
+
+        System.out.println();
+        System.out.println(dateTime3);
+        System.out.println(dateTime4);
+
+        //dealing with time zone specific date and time
+
+        ZoneId zoneId = ZoneId.of("Europe/Paris");
+        
 
 
     }
