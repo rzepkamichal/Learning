@@ -61,7 +61,6 @@ public class SnowRescueServiceTest {
 
         //BDD - given
         when(weatherForecastService.getSnowFallHeightInMM()).thenReturn(4);
-
         //BDD - when
         snowRescueService.checkForecastAndRescue();
 
@@ -113,7 +112,7 @@ public class SnowRescueServiceTest {
         //uzycie Mockito - when, verify
 
         //BDD - given
-        when(weatherForecastService.getSnowFallHeightInMM()).thenReturn(1);
+        when(weatherForecastService.getSnowFallHeightInMM()).thenReturn(12);
         when(weatherForecastService.getAverageTemperatureInCelsius()).thenReturn(-11);
 
         //BDD - when

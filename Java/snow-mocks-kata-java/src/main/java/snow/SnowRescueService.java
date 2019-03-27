@@ -23,8 +23,7 @@ public class SnowRescueService {
 
 	public void checkForecastAndRescue() {
 
-
-		if(weatherForecastService.getSnowFallHeightInMM() > 10 && weatherForecastService.getAverageTemperatureInCelsius() < 10){
+		if(weatherForecastService.getAverageTemperatureInCelsius() < -10 && weatherForecastService.getSnowFallHeightInMM() > 10){
 			municipalServices.sendSnowplow();
 			municipalServices.sendSnowplow();
 			municipalServices.sendSnowplow();
@@ -33,30 +32,32 @@ public class SnowRescueService {
 			return;
 		}
 
-		if (weatherForecastService.getSnowFallHeightInMM() > 5) {
+
+		if(weatherForecastService.getAverageTemperatureInCelsius() < 0){
+			municipalServices.sendSander();
+			return;
+		}
+
+		if(weatherForecastService.getSnowFallHeightInMM() > 5){
+			municipalServices.sendSnowplow();
 			municipalServices.sendSnowplow();
 			return;
 		}
 
-		if (weatherForecastService.getAverageTemperatureInCelsius() < 0) {
-			municipalServices.sendSander();
 
-
-			if (weatherForecastService.getSnowFallHeightInMM() > 3) {
-				try {
-					municipalServices.sendSnowplow();
-
-				/*if(weatherForecastService.getSnowFallHeightInMM() > 6){
-					municipalServices.sendSnowplow();
-				}*/
-
-				} catch (SnowplowMalfunctioningException e) {
-					municipalServices.sendSnowplow();
-				}
-
-				return;
+		if(weatherForecastService.getSnowFallHeightInMM() > 3){
+			try {
+				municipalServices.sendSnowplow();
+			}catch(SnowplowMalfunctioningException e){
+				municipalServices.sendSnowplow();
 			}
 		}
+
+
+
+
+
+
 	}
 }
 
