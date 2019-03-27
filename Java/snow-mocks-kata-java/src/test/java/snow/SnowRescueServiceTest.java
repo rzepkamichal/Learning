@@ -16,7 +16,7 @@ import static org.mockito.Mockito.*;
 
 /** Mock
  * ten framework pozwala robic testy na golych obiektach
- * z niezaimplementowanymi metodami
+ * z niezaimplementowanymi metodami.
  */
 
 @RunWith(MockitoJUnitRunner.class)
