@@ -1,9 +1,13 @@
 package app;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Date;
+import java.util.Locale;
 
 public class Main {
 
@@ -158,13 +162,50 @@ public class Main {
         System.out.println();
 
         /**Compatibility with Date and Calendar
+         * Java 8 has added the toInstant() method which helps to convert existing Date and Calendar instance to new Date Time API
+         *
+         * LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
+         * LocalDateTime.ofInstant(calendar.toInstant(), ZoneId.systemDefault());
          *
          */
 
 
+        //initialize with epoch seconds
 
+        LocalDateTime localDateTime1 = LocalDateTime.ofEpochSecond(System.currentTimeMillis()/1000, 0, ZoneOffset.of("+1") );
+        System.out.println(localDateTime1);
+        System.out.println();
 
+        /**Date and Time Formatting
+         *
+         */
 
+        // all examples above use the standard ISO_DATE format
+
+        LocalDateTime localDateTime2 = LocalDateTime.of(2019,Month.APRIL,23,7,34);
+        String localDateString = localDateTime2.format(DateTimeFormatter.ISO_DATE);
+
+        System.out.println(localDateString);
+
+        // formatter provides various formatting options
+
+        String localDateTimeString2 = localDateTime2.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
+        System.out.println(localDateTimeString2);
+
+        //local options (variyng among short, long, medium)
+        //GERMANY - becaus PL not available and DE date format is the same as PL
+
+        //date time
+
+        String localDateTimeString3 = localDateTime2.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM).withLocale(Locale.GERMANY));
+        String localDateTimeString4 = localDateTime2.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).withLocale(Locale.GERMANY));
+        System.out.println(localDateTimeString3);
+        System.out.println(localDateTimeString4);
+        System.out.println();
+
+        //date
+        String localDateTimeString5 = localDateTime2.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMANY));
+        System.out.println(localDateTimeString5);
 
     }
 }
