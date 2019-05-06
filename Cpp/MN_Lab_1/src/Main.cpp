@@ -13,6 +13,7 @@ using namespace std;
  */
 void functionA(int& n, double**& A, double*& B, const std::string& path){
 
+    //odczyt wartosci n
     std::cout << "Prosze podac rozmiar n macierzy A, wektorow B i X:" << endl;
     std::cin >> n;
     
@@ -34,9 +35,11 @@ void functionA(int& n, double**& A, double*& B, const std::string& path){
         }
     }
     
+    //odczyt kolejnych danych
     ifstream iFile;
     iFile.open(path);
 
+    //wyjatek, gdy pliku nie mozna otworzyc
     if(!iFile){
         throw -1;
     }

@@ -5,11 +5,16 @@
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_1/src/Main.cpp" Name="FileName"/>
-      <int Value="206" Name="FirstVisibleLine"/>
-      <int Value="243" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="13" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="108"/>
+        <IntVectorItem Value="6"/>
+        <IntVectorItem Value="69"/>
+        <IntVectorItem Value="147"/>
+        <IntVectorItem Value="158"/>
+        <IntVectorItem Value="189"/>
+        <IntVectorItem Value="290"/>
       </IntVector>
     </TabInfo>
   </TabInfoArray>
