@@ -11,10 +11,30 @@ using namespace std;
  * @param B - wskaznik na tablice przechowujaca elementy macierzy A
  * @param path - sciezka do pliku wejsciowego
  */
-void functionA(int n, double**& A, double*& B, const std::string& path){
+void functionA(int& n, double**& A, double*& B, const std::string& path){
 
+    std::cout << "Prosze podac rozmiar n macierzy A, wektorow B i X:" << endl;
+    std::cin >> n;
+    
+    //alokacja pamieci na tablice przechowujace macierz A i wektor B
+    A = new double* [n+1];
+    B = new double[n+1];
+    
+    //alokacja pamieci na tablice przechowujaca macierz A
+    //zerowanie tablicy przechowujacej wektor B
+    for(int i = 0; i < n+1; i++){
+        A[i] = new double[n+1];
+        B[i] = 0;
+    }
+    
+    //zerowanie tablicy A
+    for(int i = 0; i < n + 1; i++){
+        for(int j = 0; j < n + 1; j++){
+            A[i][j] = 0;
+        }
+    }
+    
     ifstream iFile;
-
     iFile.open(path);
 
     if(!iFile){
@@ -53,6 +73,31 @@ void functionA(int n, double**& A, double*& B, const std::string& path){
  * @param U - wskaznik na tablice, do ktorej zostana zapisane elementy macierzy U
  */
 void functionB(int n, double **& A, double*& B, double **& L, double **& U){
+    
+    //alokacja pamieci na tablice dwuwymiarowe
+    L = new double*[n+1];
+    U = new double*[n+1];
+    
+    for(int i = 0; i < n+1; i++){
+        L[i] = new double[n+1];
+        U[i] = new double[n+1];
+    }
+    
+    
+    //zerowanie tablicy U
+    //zerowanie tablic L, ustawienie 1 na glownej przekatnej
+    for(int i = 0; i < n + 1; i++){
+        for(int j = 0; j < n + 1; j++){
+            
+            U[i][j] = 0;
+            
+            if(i == j)
+                L[i][j] = 1;
+            else
+                L[i][j] = 0;
+        }
+    }
+    
     //wyznaczenie wiersza 1 macierzy U
     for (int j = 1; j <= n; j++)
         U[1][j] = A[1][j];
@@ -216,50 +261,19 @@ void functionD(int n, double**& A, double*& B, double**& L, double**& U, double 
 int main(int argc, char *argv[]) {
 
     //rzad ukladu rownan
-    int n = stoi(argv[1]);
+    //inicjalizacja 0 dla bezpieczenstwa
+    int n;
     
     //tablice przechowujace elementy macierzy A,B,L i U.
-    double **A = new double* [n+1];
-    double *B = new double[n+1];
-    double **L = new double*[n+1];
-    double **U = new double*[n+1];
+    double **A;
+    double *B;
+    double **L;
+    double **U;
 
-    //alokacja pamieci na tablice dwuwymiarowe oraz zerowanie wektora B
-    for(int i = 0; i < n+1; i++){
-        A[i] = new double[n+1];
-        L[i] = new double[n+1];
-        U[i] = new double[n+1];
-        B[i] = 0;
-    }
-
-    //zerowanie macierzy A, U, L
-    //ustawienie wartosci 1 na glownej przekatnej macierzy L
-    for(int i = 0; i < n + 1; i++){
-        for(int j = 0; j < n + 1; j++){
-            A[i][j] = 0;
-            U[i][j] = 0;
-            if(i == j)
-                L[i][j] = 1;
-            else
-                L[i][j] = 0;
-        }
-    }
-
-    //tablice przechowujace elementy wektorow X i Y
-    double* X = new double[n + 1];
-    double* Y = new double [n + 1];
-    
-    //wyzerowanie wektorow
-    for (int i = 0; i < n + 1; i++) {
-        Y[i] = 0 ;
-        X[i] = 0;
-    }
-    
-    
     //odczyt danych z pliku wejsciowego
     try{
 
-        functionA(n, A, B, argv[2]);
+        functionA(n, A, B, argv[1]);
 
     }catch(int &e){
         cout << "Blad odczytu plik wejsciowego" << endl;
@@ -269,12 +283,12 @@ int main(int argc, char *argv[]) {
     //otwarcie pliku wyjsciowego do wygenerowania raportu
     
     ofstream oFile;
-    //oFile.precision(10);
-    oFile.open(argv[3]);
+    oFile.open(argv[2]);
     
     if(!oFile){
         cout << "Blad otwarcia pliku wyjsciowego" << endl;
         return 0;
+        cout << "Blad otwarcia pliku wyjsciowego." << endl;
     }
 
 
@@ -287,6 +301,16 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
+    //tablice przechowujace elementy wektorow X i Y
+    double* X = new double[n + 1];
+    double* Y = new double [n + 1];
+    
+    //wyzerowanie wektorow
+    for (int i = 0; i < n + 1; i++) {
+        Y[i] = 0 ;
+        X[i] = 0;
+    }
+    
     //rozwiazanie ukladu rownan
     functionC(n, A, B, L, U, X, Y);
     
