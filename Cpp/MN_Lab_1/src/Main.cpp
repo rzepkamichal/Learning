@@ -1,10 +1,48 @@
-
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <iomanip>
 
 using namespace std;
+/**
+ * odczytanie macierzy A i wektora B z pliku
+ * @param n - rzad ukladu rownan
+ * @param A - wskaznik na tablice przechowujaca elementy macierzy A
+ * @param B - wskaznik na tablice przechowujaca elementy macierzy A
+ * @param path - sciezka do pliku wejsciowego
+ */
+void functionA(int n, double**& A, double*& B, const std::string& path){
+
+    ifstream iFile;
+
+    iFile.open(path);
+
+    if(!iFile){
+        throw -1;
+    }
+
+    string tmpLine;
+
+    int i = 1;
+    while(getline(iFile,tmpLine)){
+
+        stringstream tmpStream(tmpLine);
+        string buff;
+
+
+        for(int j = 1; j <=n+1; j++){
+            tmpStream >> buff;
+            if(j == n+1){
+                B[i] = stod(buff);
+            }else {
+                A[i][j] = stod(buff);
+            }
+        }
+        i++;
+    }
+    
+    iFile.close();
+}
 
 /**
  * funkcja wyznacza elementy macierzy L i U za pomoca algorytmu Doolittle'a
@@ -69,6 +107,7 @@ void functionB(int n, double **& A, double*& B, double **& L, double **& U){
  * @param X - wskaznik na tablice przechowujaca wyznaczone elementy wektora X
  * @param Y - wskaznik na tablice przechowujaca wyznaczone elementy wektora Y
  */
+    
 void functionC(int n, double**& A, double*& B, double**& L, double**& U, double*& X, double*& Y) {
 
     //inicjalizacja pierwszego elementu wektora Y
@@ -101,50 +140,21 @@ void functionC(int n, double**& A, double*& B, double**& L, double**& U, double*
 }
 
 /**
- * odczytanie macierzy A i wektora B z pliku
- * @param n - rzad ukladu rownan
- * @param A - wskaznik na tablice przechowujaca elementy macierzy A
- * @param B - wskaznik na tablice przechowujaca elementy macierzy A
- * @param path - sciezka do pliku wejsciowego
+ * generowanie raportu do pliku
+ * @param n
+ * @param A
+ * @param B
+ * @param L
+ * @param U
+ * @param X
+ * @param Y
+ * @param oFile - referencja do strumienia pliku wyjsciowego
  */
-void readFileInput(int n, double**& A, double*& B, const std::string& path){
-    
-
-    ifstream iFile;
-
-    iFile.open(path);
-
-    if(!iFile){
-        throw -1;
-    }
-
-    string tmpLine;
-
-    int i = 1;
-    while(getline(iFile,tmpLine)){
-
-        stringstream tmpStream(tmpLine);
-        string buff;
-
-
-        for(int j = 1; j <=n+1; j++){
-            tmpStream >> buff;
-            if(j == n+1){
-                B[i] = stod(buff);
-            }else {
-                A[i][j] = stod(buff);
-            }
-        }
-        i++;
-    }
-    
-    iFile.close();
-}
-
-void saveToFile(int n, double**& A, double*& B, double**& L, double**& U, double *& X, double *& Y, std::ofstream & oFile){
+void functionD(int n, double**& A, double*& B, double**& L, double**& U, double *& X, double *& Y, std::ofstream & oFile){
     
     //generowanie raportu do pliku
     int width = 20;
+    int numberOfDecimals = 9;
     
     oFile << "Macierz A:" << endl << endl;
     for(int i = 1; i <=n; i++) {
@@ -186,7 +196,7 @@ void saveToFile(int n, double**& A, double*& B, double**& L, double**& U, double
     oFile << endl << endl;
     oFile << "----------------------------------------------------------" << endl;
 
-    oFile.precision(9);
+    oFile.precision(numberOfDecimals);
     oFile << std::scientific;
     
     oFile << "Wektor Y:" << endl << endl;
@@ -249,7 +259,7 @@ int main(int argc, char *argv[]) {
     //odczyt danych z pliku wejsciowego
     try{
 
-        readFileInput(n, A, B, argv[2]);
+        functionA(n, A, B, argv[2]);
 
     }catch(int &e){
         cout << "Blad odczytu plik wejsciowego" << endl;
@@ -277,9 +287,12 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
+    //rozwiazanie ukladu rownan
     functionC(n, A, B, L, U, X, Y);
-
-    saveToFile(n, A, B, L, U, X, Y, oFile);
+    
+    
+    //generowanie raportu do pliku
+    functionD(n, A, B, L, U, X, Y, oFile);
 
     oFile.close();
     return 0;
