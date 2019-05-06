@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="/home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1/MN_Lab_1.workspace">
+<Session Name="/home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1/program.workspace">
   <int Value="0" Name="m_selectedTab"/>
-  <wxString Value="/home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1/MN_Lab_1.workspace" Name="m_workspaceName"/>
+  <wxString Value="/home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1/program.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="/home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1/src/Main.cpp" Name="FileName"/>

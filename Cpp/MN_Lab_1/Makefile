@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/muser/Desktop/dev/Learning/Cpp/MN_Lab_1
+CMAKE_SOURCE_DIR = /home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/muser/Desktop/dev/Learning/Cpp/MN_Lab_1
+CMAKE_BINARY_DIR = /home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muser/Desktop/dev/Learning/Cpp/MN_Lab_1/CMakeFiles /home/muser/Desktop/dev/Learning/Cpp/MN_Lab_1/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1/CMakeFiles /home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muser/Desktop/dev/Learning/Cpp/MN_Lab_1/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/musr/Desktop/dev/Learning/Cpp/MN_Lab_1/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MN_Lab_1
+# Target rules for targets named program
 
 # Build rule for target.
-MN_Lab_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MN_Lab_1
-.PHONY : MN_Lab_1
+program: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 program
+.PHONY : program
 
 # fast build rule for target.
-MN_Lab_1/fast:
-	$(MAKE) -f CMakeFiles/MN_Lab_1.dir/build.make CMakeFiles/MN_Lab_1.dir/build
-.PHONY : MN_Lab_1/fast
+program/fast:
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/build
+.PHONY : program/fast
 
 src/Main.o: src/Main.cpp.o
 
@@ -129,7 +129,7 @@ src/Main.o: src/Main.cpp.o
 
 # target to build an object file
 src/Main.cpp.o:
-	$(MAKE) -f CMakeFiles/MN_Lab_1.dir/build.make CMakeFiles/MN_Lab_1.dir/src/Main.cpp.o
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Main.cpp.o
 .PHONY : src/Main.cpp.o
 
 src/Main.i: src/Main.cpp.i
@@ -138,7 +138,7 @@ src/Main.i: src/Main.cpp.i
 
 # target to preprocess a source file
 src/Main.cpp.i:
-	$(MAKE) -f CMakeFiles/MN_Lab_1.dir/build.make CMakeFiles/MN_Lab_1.dir/src/Main.cpp.i
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Main.cpp.i
 .PHONY : src/Main.cpp.i
 
 src/Main.s: src/Main.cpp.s
@@ -147,7 +147,7 @@ src/Main.s: src/Main.cpp.s
 
 # target to generate assembly for a file
 src/Main.cpp.s:
-	$(MAKE) -f CMakeFiles/MN_Lab_1.dir/build.make CMakeFiles/MN_Lab_1.dir/src/Main.cpp.s
+	$(MAKE) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
 # Help Target
@@ -157,7 +157,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... MN_Lab_1"
+	@echo "... program"
 	@echo "... edit_cache"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
