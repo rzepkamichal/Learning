@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -107,6 +108,7 @@ void functionC(int n, double**& A, double*& B, double**& L, double**& U, double*
  * @param path - sciezka do pliku wejsciowego
  */
 void readFileInput(int n, double**& A, double*& B, const std::string& path){
+    
 
     ifstream iFile;
 
@@ -137,6 +139,68 @@ void readFileInput(int n, double**& A, double*& B, const std::string& path){
     }
     
     iFile.close();
+}
+
+void saveToFile(int n, double**& A, double*& B, double**& L, double**& U, double *& X, double *& Y, std::ofstream & oFile){
+    
+    //generowanie raportu do pliku
+    int width = 20;
+    
+    oFile << "Macierz A:" << endl << endl;
+    for(int i = 1; i <=n; i++) {
+        for (int j = 1; j <= n; j++) {
+            oFile << setw(width) << A[i][j] ;
+        }
+        oFile << endl;
+    }
+    
+    oFile << endl << endl;
+    oFile << "----------------------------------------------------------" << endl;
+
+    oFile << "Wektor B:" << endl << endl;
+    for(int i = 1; i <= n; i++){
+        oFile << setw(width) << B[i];
+    }
+
+    oFile << endl << endl;
+    oFile << "----------------------------------------------------------" << endl;
+
+    oFile << "Macierz L:" << endl << endl;
+    for(int i = 1; i <=n; i++) {
+        for (int j = 1; j <= n; j++) {
+            oFile << setw(width) << L[i][j];
+        }
+        oFile << endl;
+    }
+    oFile << endl << endl;
+    oFile << "----------------------------------------------------------" << endl;
+    
+    oFile << "Macierz U:" << endl << endl;
+    for(int i = 1; i <=n; i++) {
+        for (int j = 1; j <= n; j++) {
+            oFile << setw(width) << U[i][j];
+        }
+        oFile << endl;
+    }
+    
+    oFile << endl << endl;
+    oFile << "----------------------------------------------------------" << endl;
+
+    oFile.precision(9);
+    oFile << std::scientific;
+    
+    oFile << "Wektor Y:" << endl << endl;
+    for(int i = 1; i <= n; i++){
+        oFile << setw(width) << Y[i];
+    }
+    
+    oFile << endl << endl;
+    oFile << "----------------------------------------------------------" << endl;
+
+    oFile << "Wektor X:" << endl << endl;
+    for(int i = 1; i <= n; i++){
+        oFile << setw(width) << X[i];
+    }
 }
 
 int main(int argc, char *argv[]) {
@@ -193,7 +257,9 @@ int main(int argc, char *argv[]) {
     }
     
     //otwarcie pliku wyjsciowego do wygenerowania raportu
+    
     ofstream oFile;
+    //oFile.precision(10);
     oFile.open(argv[3]);
     
     if(!oFile){
@@ -213,59 +279,7 @@ int main(int argc, char *argv[]) {
 
     functionC(n, A, B, L, U, X, Y);
 
-    //generowanie raportu do pliku
-    oFile << "Macierz A:" << endl;
-    for(int i = 1; i <=n; i++) {
-        for (int j = 1; j <= n; j++) {
-            oFile << A[i][j] << "\t";
-        }
-        oFile << endl;
-    }
-    
-    oFile << endl;
-    oFile << "----------------------------------------------------------" << endl;
-
-    oFile << "Wektor B:" << endl;
-    for(int i = 1; i <= n; i++){
-        oFile << B[i] << "\t";
-    }
-
-    oFile << endl;
-    oFile << "----------------------------------------------------------" << endl;
-
-    oFile << "Macierz L:" << endl;
-    for(int i = 1; i <=n; i++) {
-        for (int j = 1; j <= n; j++) {
-            oFile << L[i][j] << "\t";
-        }
-        oFile << endl;
-    }
-    oFile << endl;
-    oFile << "----------------------------------------------------------" << endl;
-    
-    oFile << "Macierz U:" << endl;
-    for(int i = 1; i <=n; i++) {
-        for (int j = 1; j <= n; j++) {
-            oFile << U[i][j] << "\t";
-        }
-        oFile << endl;
-    }
-    
-    oFile << endl;
-    oFile << "----------------------------------------------------------" << endl;
-
-    oFile << "Wektor Y:" << endl;
-    for(int i = 1; i <= n; i++){
-        oFile << Y[i] << "\t";
-    }
-    
-    oFile << endl;
-    oFile << "----------------------------------------------------------" << endl;
-
-    oFile << "Wektor X:" << endl;
-    for(int i = 1; i <= n; i++){
-        oFile << X[i] << "\t";
-    }
+    saveToFile(n, A, B, L, U, X, Y, oFile);
 
     oFile.close();
     return 0;
