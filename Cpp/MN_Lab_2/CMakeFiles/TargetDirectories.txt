@@ -1,0 +1,3 @@
+/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_2/CMakeFiles/rebuild_cache.dir
+/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_2/CMakeFiles/aproksymacja.dir
+/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_2/CMakeFiles/edit_cache.dir
