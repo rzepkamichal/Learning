@@ -1,1 +1,0 @@
-/usr/bin/c++   -Wall -Werror -std=c++14 -g   CMakeFiles/MN_Lab_1.dir/src/Main.cpp.o  -o MN_Lab_1 
