@@ -7,4 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/muser/Desktop/dev/Learning/Cpp/MN_Lab_2/src/main.cpp
+iostream
+-
+cmath
+-
 
