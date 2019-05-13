@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
+#include <fstream>
 using namespace std;
+
 int factorial(int arg){
 
     if(arg == 0 || arg == 1)
@@ -14,46 +16,44 @@ int factorial(int arg){
     return result;
 }
 
-int binomial(int k, int s){
-   
-    return factorial(k)/(factorial(s)*factorial(k-s));
+double binomial(int k, int s){
+ 
+    double result = factorial(k)/(factorial(s)*factorial(k-s)); 
+    return result;
     
 }
-int calculateProduct(int r, int s){
+double calculateProduct(double r, int s){
     
-    int result = 1;
+    double result = 1;
     
-    for(int i = 1; i <= s; i++){
-        result *= r-i + 1;
-    }
+    for (int i = 0; i <= s - 1; i++)
+        result *= (r - i);
+    
     
     return result;
 }
 
-double gramPolyNomial(int degree, int n, int q){
+double gramPolyNomial(int k, int n, double q){
  
-    int coefficient = 1;
-    double sum = 0;
-    for(int i = 0; i <= degree; i++){
+    double coefficient = 1;
+    double result = 0;
+    for(int s = 0; s <= k; s++){
         
         
-        sum += coefficient * binomial(degree,i) * binomial(degree + i, i)
-            * (calculateProduct(q,i)/calculateProduct(n,i));
+        result += coefficient * binomial(k,s) * binomial(k + s, s)
+            * (calculateProduct(q,s)/calculateProduct(n,s));
             
-        //std::cout << "Iteracja: " << i <<std::endl;
-        //std::cout << coefficient * binomial(degree,i) * binomial(degree + i, i) << std::endl;
         coefficient *= -1;
     }
     
-    
-    return sum;   
+    return result;   
 }
 
 double calculateS(int j, int n){
     
-    int sum = 0;
-    for(int i = 0; i <= n; i++){
-        sum+= gramPolyNomial(j, n, i) * gramPolyNomial(j, n, i);
+    double sum = 0;
+    for(int q = 0; q <= n; q++){
+        sum += pow(gramPolyNomial(j, n, q), 2);
     }
     
     return sum;
@@ -62,10 +62,10 @@ double calculateS(int j, int n){
 double calculateC(int j, int n, double*& f){
     
     
-    int sum = 0;
-    for(int i = 0; i <= n; i++){
+    double sum = 0;
+    for(int q = 0; q <= n; q++){
     
-        sum+= *(f+i) * gramPolyNomial(j, n, i);
+        sum += f[q] * gramPolyNomial(j, n, q);
     }
     
     return sum;
@@ -75,53 +75,74 @@ double calculate_q(double x, double x_0, double h){
     return (x-x_0)/h;
 }
 
-double approx(double x, double x_0, int degree, int n, double h, double*& f, double*& a ){
+double approx(double x, double x_0, int m, int n, double h, double*& f, double*& a ){
     
 
     double sum = 0;
     
-    for(int j = 0; j <= degree; j++){
+    for(int j = 0; j <= m; j++){
         
-        *(a + i) = (double)(calculateC(j,n, f)/calculateS(j,n));
-        sum += (*(a+i)) * gramPolyNomial(degree, n, calculate_q(x, x_0, h));
+        a[j] = calculateC(j,n,f)/calculateS(j,n);
+        sum += a[j] * gramPolyNomial(j, n, calculate_q(x, x_0, h));
     }
    
     return sum;
 }
 
-int main(){
+void writeToFile(const std::string& path, double*& x, double*& f ,double*& results, int n){
     
-    int n = 49;
-    int degree = 5;
+    std::ofstream oFile(path);
+    
+    if(!oFile)
+        throw -1;
+    
+    oFile << "x," << "f(x)," << "Q(x)" << endl;
+        
+    for(int i = 0; i < n; i++){
+        oFile << x[i] << "," << f[i] << "," << results[i] << endl;
+    }
+    
+    oFile.close();
+}
+
+int main(int argc, char* argv[]){
+    
+   
+    
+    int n = stoi(argv[1]);
+    int degree = stoi(argv[2]);
+    int lowerBoundry = stoi(argv[3]);
+    int upperBoundry = stoi(argv[4]);
+    std::string outputPath = argv[5];
+    
+    double interval = (double)(upperBoundry - lowerBoundry)/n;
+    
     double* x = new double[n+1];
     double* f = new double[n+1];
     double* a = new double[degree + 1];
-    
-    for(int i = 0; i < n + 1; i++){
-        
-        //std::cout << (double) 4/(n-1) << std :: endl;
+    double* results = new double[n+1];
 
-        *(x+i) = -2 + (i * (double)4/n);
+   
+ 
+    x[0] = lowerBoundry;
+    
+    for(int i = 1; i < n + 1; i++){
+        
+        x[i] = x[i-1] + interval;
     }
     
     
     for(int i = 0; i < n + 1; i++){
-        *(f+i) = cos(*(x+i))*sin(3*(*(x+i)));
+        f[i] = cos(x[i])*sin(3*x[i]);
+        //*(f+i) = sin(*(x+i))*sin(2*(*(x+i)));
+    }
+    
+    for(int i = 0; i < n + 1; i++){
+        results[i] = approx(x[i],lowerBoundry, degree, n + 1, interval, f, a);
     }
     
     
-    double result;
-    result = approx(2, -2, degree, n, (double)4/(n-1), f);
-    
-    std::cout << result << std::endl;
-    
-    /*
-    for(int i = 0; i < n; i++){
-        std::cout << *(x+i) << ", " << *(f+i) << std ::endl;
-    }
-    */
-    //std::cout << calculateProduct(3,1) << std::endl;
-    //std::cout << gramPolyNomial(0, 10, 20) << std::endl;
-    
+    writeToFile(outputPath, x, f, results, n + 1);
+
     return 0;
 }
