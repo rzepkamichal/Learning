@@ -117,7 +117,7 @@ void writeFileCoeffError(const std::string& path, double*& a, int degree, double
     if(!oFile)
         throw -1;
     
-    oFile << "i," << "a[i]," << "blad bezwzgledny," << endl;
+    oFile << "i," << "a[i]," << "miara bledu aproksymacji," << endl;
     oFile << " ," << " ," << absError << "," << endl;
         
     for(int i = 0; i <= degree; i++){
