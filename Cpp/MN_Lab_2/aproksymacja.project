@@ -21,9 +21,9 @@
 			<PreBuild/>
 			<PostBuild/>
 			<CustomBuild Enabled="yes">
-				<RebuildCommand>/usr/bin/make -j 8 clean &amp;&amp; /usr/bin/make -j 8</RebuildCommand>
-				<CleanCommand>/usr/bin/make -j 8 clean</CleanCommand>
-				<BuildCommand>/usr/bin/make -j 8</BuildCommand>
+				<RebuildCommand>/usr/bin/make -j 16 clean &amp;&amp; /usr/bin/make -j 16</RebuildCommand>
+				<CleanCommand>/usr/bin/make -j 16 clean</CleanCommand>
+				<BuildCommand>/usr/bin/make -j 16</BuildCommand>
 				<SingleFileCommand>/usr/bin/make -f$(ProjectPath)/Makefile $(CurrentFileName).cpp.o</SingleFileCommand>
 				<PreprocessFileCommand/>
 				<WorkingDirectory>$(WorkspacePath)</WorkingDirectory>

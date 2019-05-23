@@ -3,24 +3,19 @@
 #include <fstream>
 using namespace std;
 
-int factorial(int arg){
-
-    if(arg == 0 || arg == 1)
-        return 1;
+double binomial(int k, int s){
+     
+    double result = 1;
     
-    int result = arg;
-    for(int i = arg - 1; i > 1; i--){
-        result *= i;
+    if(s > k -s)
+        s = k - s;
+    
+    for(int i = 0; i < s; i++){
+        result *= (k-i);
+        result /= (i+1);
     }
     
     return result;
-}
-
-double binomial(int k, int s){
- 
-    double result = factorial(k)/(factorial(s)*factorial(k-s)); 
-    return result;
-    
 }
 double calculateProduct(double r, int s){
     
@@ -89,7 +84,17 @@ double approx(double x, double x_0, int m, int n, double h, double*& f, double*&
     return sum;
 }
 
-void writeToFile(const std::string& path, double*& x, double*& f ,double*& results, int n){
+double absoluteError(double*& f ,double*& Q, int n){
+    
+    double absError = 0;
+    for(int i = 0; i <= n; i++)
+        absError += pow(f[i] - Q[i], 2);
+        
+    return absError;
+    
+}
+
+void writeFileResult(const std::string& path, double*& x, double*& f ,double*& Q, int n){
     
     std::ofstream oFile(path);
     
@@ -99,7 +104,24 @@ void writeToFile(const std::string& path, double*& x, double*& f ,double*& resul
     oFile << "x," << "f(x)," << "Q(x)" << endl;
         
     for(int i = 0; i < n; i++){
-        oFile << x[i] << "," << f[i] << "," << results[i] << endl;
+        oFile << x[i] << "," << f[i] << "," << Q[i] << endl;
+    }
+    
+    oFile.close();
+}
+
+void writeFileCoeffError(const std::string& path, double*& a, int degree, double absError){
+    
+    std::ofstream oFile(path);
+    
+    if(!oFile)
+        throw -1;
+    
+    oFile << "i," << "a[i]," << "blad bezwzgledny," << endl;
+    oFile << " ," << " ," << absError << "," << endl;
+        
+    for(int i = 0; i <= degree; i++){
+        oFile << i << "," << a[i] << "," << endl;
     }
     
     oFile.close();
@@ -108,41 +130,46 @@ void writeToFile(const std::string& path, double*& x, double*& f ,double*& resul
 int main(int argc, char* argv[]){
     
    
-    
     int n = stoi(argv[1]);
     int degree = stoi(argv[2]);
     int lowerBoundry = stoi(argv[3]);
     int upperBoundry = stoi(argv[4]);
-    std::string outputPath = argv[5];
+    std::string outputPathResult = argv[5];
+    std::string outputPathCoefficients = argv[6];
     
     double interval = (double)(upperBoundry - lowerBoundry)/n;
-    
+
     double* x = new double[n+1];
     double* f = new double[n+1];
     double* a = new double[degree + 1];
-    double* results = new double[n+1];
+    double* Q = new double[n+1];
+    double absError;
 
-   
- 
     x[0] = lowerBoundry;
     
     for(int i = 1; i < n + 1; i++){
-        
         x[i] = x[i-1] + interval;
     }
     
-    
     for(int i = 0; i < n + 1; i++){
         f[i] = cos(x[i])*sin(3*x[i]);
-        //*(f+i) = sin(*(x+i))*sin(2*(*(x+i)));
     }
     
     for(int i = 0; i < n + 1; i++){
-        results[i] = approx(x[i],lowerBoundry, degree, n + 1, interval, f, a);
+        Q[i] = approx(x[i],lowerBoundry, degree, n + 1, interval, f, a);
     }
     
-    
-    writeToFile(outputPath, x, f, results, n + 1);
+    absError = absoluteError(f, Q, n);
+      
+    try{
+        writeFileResult(outputPathResult, x, f, Q, n + 1);
+        writeFileCoeffError(outputPathCoefficients, a, degree, absError);
+        
+    }catch(int &e){
+        std::cout << "Blad odczytu plikow!" << std::endl;
+    }
+     
+     
 
     return 0;
 }

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_2/src/main.cpp" "/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_2/CMakeFiles/aproksymacja.dir/src/main.cpp.o"
+  "/home/musr/dev_learning_link/Cpp/MN_Lab_2/src/main.cpp" "/home/musr/dev_learning_link/Cpp/MN_Lab_2/CMakeFiles/aproksymacja.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

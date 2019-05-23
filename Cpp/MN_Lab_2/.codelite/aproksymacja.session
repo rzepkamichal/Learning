@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Session Name="/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_2/aproksymacja.workspace">
+<Session Name="/home/musr/Desktop/dev/Learning/Cpp/MN_Lab_2/aproksymacja.workspace">
   <int Value="0" Name="m_selectedTab"/>
-  <wxString Value="/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_2/aproksymacja.workspace" Name="m_workspaceName"/>
+  <wxString Value="/home/musr/Desktop/dev/Learning/Cpp/MN_Lab_2/aproksymacja.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
-      <wxString Value="/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_2/src/main.cpp" Name="FileName"/>
-      <int Value="90" Name="FirstVisibleLine"/>
-      <int Value="99" Name="CurrentLine"/>
+      <wxString Value="/home/musr/Desktop/dev/Learning/Cpp/MN_Lab_2/src/main.cpp" Name="FileName"/>
+      <int Value="159" Name="FirstVisibleLine"/>
+      <int Value="176" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
