@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/muser/Desktop/dev/Learning/Cpp/MN_Lab_3/src/main.cpp
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+math.h
+-
+iostream
+-
+
